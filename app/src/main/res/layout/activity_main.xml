@@ -5,9 +5,16 @@
     android:layout_height="match_parent"
     tools:context="com.udacity.sandwichclub.MainActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="216dp"
+        android:src="@drawable/bg"/>
+
     <ListView
         android:id="@+id/sandwiches_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:paddingTop="10dp"/>
 
 </RelativeLayout>
