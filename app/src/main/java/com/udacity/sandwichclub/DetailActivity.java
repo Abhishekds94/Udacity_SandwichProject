@@ -19,28 +19,27 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
-    private TextView mAlsoKnownTv;
-    private TextView mAlsoKnownLabel;
-    private TextView mOriginTv;
-    private TextView mOriginLabel;
-    private TextView mDescriptionTv;
-    private TextView mIngredientTv;
-    private ImageView mSandwichIv;
+    private TextView tvAlsoKnown;
+    private TextView tvAlsoKnownLabel;
+    private TextView tvOrigin;
+    private TextView tvOriginLabel;
+    private TextView tvDescription;
+    private TextView tvIngredient;
+    private ImageView ivSandwich;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        //super.onCreate(savedInstanceState);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mSandwichIv = findViewById(R.id.image_iv);
-        mAlsoKnownTv = findViewById(R.id.also_known_tv);
-        mAlsoKnownLabel = findViewById(R.id.alsoKnownAs_label);
-        mOriginTv = findViewById(R.id.origin_tv);
-        mOriginLabel = findViewById(R.id.placeOfOrigin_label);
-        mDescriptionTv = findViewById(R.id.description_tv);
-        mIngredientTv = findViewById(R.id.ingredients_tv);
+        ivSandwich = findViewById(R.id.image_iv);
+        tvAlsoKnown = findViewById(R.id.also_known_tv);
+        tvAlsoKnownLabel = findViewById(R.id.alsoKnownAs_label);
+        tvOrigin = findViewById(R.id.origin_tv);
+        tvOriginLabel = findViewById(R.id.placeOfOrigin_label);
+        tvDescription = findViewById(R.id.description_tv);
+        tvIngredient = findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -58,7 +57,6 @@ public class DetailActivity extends AppCompatActivity {
         String json = sandwiches[position];
         Sandwich sandwich = JsonUtils.parseSandwichJson(json);
         if (sandwich == null) {
-            // Sandwich data unavailable
             closeOnError();
             return;
         }
@@ -82,7 +80,7 @@ public class DetailActivity extends AppCompatActivity {
     private void populateUI(Sandwich sandwich) {
 
 
-        // set Text to alsoKnownTv
+        //setText to alsoKnown
         if (sandwich.getAlsoKnownAs() != null && sandwich.getAlsoKnownAs().size() > 0) {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append(sandwich.getAlsoKnownAs().get(0));
@@ -92,24 +90,24 @@ public class DetailActivity extends AppCompatActivity {
                 stringBuilder.append("\n");
                 stringBuilder.append(sandwich.getAlsoKnownAs().get(i));
             }
-            mAlsoKnownTv.setText(stringBuilder.toString());
+            tvAlsoKnown.setText(stringBuilder.toString());
         } else {
-            mAlsoKnownTv.setVisibility(View.GONE);
-            mAlsoKnownLabel.setVisibility(View.GONE);
+            tvAlsoKnown.setVisibility(View.GONE);
+            tvAlsoKnownLabel.setVisibility(View.GONE);
         }
 
-        // set Text to originTv
+        //setText to origin
         if (sandwich.getPlaceOfOrigin().isEmpty()) {
-            mOriginTv.setVisibility(View.GONE);
-            mOriginLabel.setVisibility(View.GONE);
+            tvOrigin.setVisibility(View.GONE);
+            tvOriginLabel.setVisibility(View.GONE);
         } else {
-            mOriginTv.setText(sandwich.getPlaceOfOrigin());
+            tvOrigin.setText(sandwich.getPlaceOfOrigin());
         }
 
-        // set Text to descriptionTv
-        mDescriptionTv.setText(sandwich.getDescription());
+        //setText to description
+        tvDescription.setText(sandwich.getDescription());
 
-        // set Text to ingredientTv
+        //setText to ingredient
         if (sandwich.getIngredients() != null && sandwich.getIngredients().size() > 0) {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append("\u2022");
@@ -120,12 +118,12 @@ public class DetailActivity extends AppCompatActivity {
                 stringBuilder.append("\u2022");
                 stringBuilder.append(sandwich.getIngredients().get(i));
             }
-            mIngredientTv.setText(stringBuilder.toString());
+            tvIngredient.setText(stringBuilder.toString());
         }
 
-        // display the image
+        //set the header image
         Picasso.with(this)
                 .load(sandwich.getImage())
-                .into(mSandwichIv);
+                .into(ivSandwich);
     }
 }
