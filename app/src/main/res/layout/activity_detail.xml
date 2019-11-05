@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="16dp">
 
+
         <ImageView
             android:id="@+id/image_iv"
             android:layout_width="match_parent"
@@ -21,98 +22,148 @@
             android:layout_alignParentTop="true"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black"
+            android:layout_above="@+id/alsoKnownAs_label"/>
+
         <TextView
             android:id="@+id/alsoKnownAs_label"
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/detail_also_known_as_label"
             android:textStyle="bold"
-            android:layout_below="@+id/image_iv"
-            app:layout_constraintBaseline_toBaselineOf="@+id/also_known_tv"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:background="@color/colorBg"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:layout_below="@+id/image_iv"/>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/alsoKnownAs_label"/>
 
         <TextView
             android:id="@+id/also_known_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@+id/alsoKnownAs_label"
-            android:layout_marginTop="1dp"
-            android:layout_toRightOf="@id/alsoKnownAs_label"
-            tools:text="Lorem Ipsum" />
+            android:textAlignment="center"
+            android:layout_marginTop="4dp"
+            tools:text="Lorem Ipsum"
+            android:textColor="@android:color/black"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/also_known_tv"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/placeOfOrigin_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/detail_place_of_origin_label"
             android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/origin_tv"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/also_known_tv"
+            android:background="@color/colorBg"
+            android:textColor="#fff"
+            android:textAlignment="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/placeOfOrigin_label"/>
 
         <TextView
             android:id="@+id/origin_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/placeOfOrigin_label"
-            app:layout_constraintTop_toBottomOf="@+id/also_known_tv"
-            tools:text="Lorem Ipsum" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/placeOfOrigin_label"
+            tools:text="Lorem Ipsum"
+            android:textAlignment="center"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/black"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/origin_tv"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/description_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/detail_description_label"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/origin_tv" />
+            android:layout_below="@+id/origin_tv"
+            android:background="@color/colorBg"
+            android:textColor="#fff"
+            android:layout_marginTop="12dp"
+            android:textAlignment="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/description_label"/>
 
         <TextView
             android:id="@+id/description_tv"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_label"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:layout_below="@+id/description_label"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/black"
             tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/description_tv"
+            android:layout_marginTop="20dp"/>
+
 
         <TextView
             android:id="@+id/ingredients_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/detail_ingredients_label"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_tv" />
+            android:layout_below="@+id/description_tv"
+            android:background="@color/colorBg"
+            android:textColor="#fff"
+            android:layout_marginTop="22dp"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/ingredients_label"/>
 
         <TextView
             android:id="@+id/ingredients_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ingredients_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="10dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/ingredients_label"
+            android:textColor="@android:color/black"
             tools:text="\u2022 Lorem Ipsum \n\u2022 Lorem Ipsum \n\u2022 Lorem Ipsum \n\u2022 Lorem Ipsum \n\u2022 Lorem Ipsum \n\u2022 Lorem Ipsum" />
+
     </RelativeLayout>
 </ScrollView>
